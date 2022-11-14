@@ -1,1 +1,15 @@
-<h1>Our first view 🚀</h1>
+<div class="container">
+  <div class="row p-4 pb-0 pe-lg-0 pt-lg-5 align-items-center rounded-3 border shadow-lg">
+        <div class="col-lg-7 p-3 p-lg-5 pt-lg-3">
+          <h1 class="display-4 fw-bold lh-1">Vamos <br> croquetons !! </h1>
+          <p class="lead">Lorem ipsum dolor sit, amet consectetur adipisicing elit. Aliquam accusantium labore ipsam nostrum ipsa nam necessitatibus accusamus harum amet placeat illo earum sunt voluptatem aliquid provident, quos autem libero doloremque.</p>
+          <div class="d-grid gap-2 d-md-flex justify-content-md-start mb-4 mb-lg-3">
+            <%= link_to "Sign up", new_user_registration_path, class: "btn btn-primary btn-lg px-4 me-md-2 fw-bold" %>
+            <%= link_to "Login", new_user_session_path, class: "btn btn-outline-secondary btn-lg px-4" %>
+          </div>
+        </div>
+        <div class="col-lg-4 offset-lg-1 p-0 overflow-hidden shadow-lg">
+          <%= image_tag "date_home_page.jpg", height: 300 %>
+        </div>
+  </div>
+</div>
