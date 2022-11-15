@@ -11,8 +11,17 @@
   </head>
 
   <body>
+    <%# NAVBAR %>
     <%= render "layouts/nav" %>
+
+    <%# FLASHES %>
+    <%= render "shared/flashes" %>
+
     <%= yield %>
+
+    <%# FOOTER %>
     <%= render "layouts/footer" %>
+
+
   </body>
 </html>
