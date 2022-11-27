@@ -1,16 +1,12 @@
   var slides = document.querySelectorAll('#slides .slide');
   var currentSlide = 0;
   var activeSlide = document.querySelector('#slides .slide:first-child');
-  console.log(activeSlide);
 
-  // activeSlide.classList.add("red");
+  // Showing first slide
+  activeSlide.classList.add("showing");
 
-    activeSlide.classList.add("showing");
-
-
+  // When button is clicked go to next slide
   const dislike = document.getElementById("dislike");
-  console.log(dislike);
-
   dislike.addEventListener("click", (event) => {
     goToSlide('dislike');
   });
@@ -20,19 +16,17 @@
     goToSlide('like');
   });
 
+  function goToSlide(action) {
 
-function goToSlide(action) {
-  activeSlide.classList.remove("showing");
-  console.log(activeSlide);
-  activeSlide = activeSlide.nextElementSibling(".slide");
+    slides[currentSlide].className = 'slide';
+    currentSlide = (currentSlide+1)%slides.length;
+    slides[currentSlide].className = 'slide showing';
 
-  if (action == "like") {
-  } else {
+    if (action == "like") {
+      console.log(action);
+    } else {
+      console.log(action);
 
-  }
+    }
 
-  activeSlide.classList.add("showing");
-  // slides[currentSlide].className = 'slide';
-  // currentSlide = (currentSlide+1)%slides.length;
-  // slides[currentSlide].className = 'slide showing';
 }
