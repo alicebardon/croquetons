@@ -3,12 +3,19 @@
 <%= simple_form_for(resource, as: resource_name, url: registration_path(resource_name), html: { method: :put }) do |f| %>
   <%= f.error_notification %>
 
-  <div class="form-inputs">
+  <div class="form-inputs container">
     <%= f.input :email, required: true, autofocus: true %>
     <%= f.input :first_name,
                 required: true,
                 autofocus: true,
                 input_html: { autocomplete: "email" }%>
+    <%= f.input :photos, as: :file, input_html: {multiple: true} %>
+
+    <% if resource.photos.attached? %>
+      <% resource.photos.each do |photo| %>
+      <%= cl_image_tag photo.key, width: 400 %>
+      <% end %>
+    <% end %>
 
 
     <% if devise_mapping.confirmable? && resource.pending_reconfirmation? %>
