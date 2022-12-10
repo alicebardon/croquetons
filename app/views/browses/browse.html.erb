@@ -4,7 +4,9 @@
   <% @users.each do |user| %>
   <div class="slide" data-id="<%= user.id %>">
     <li><%= user.first_name %></li>
-    <li><%= user.photos.first %></li>
+      <% user.photos.each do |photo| %>
+      <%= cl_image_tag photo.key, height: 300, width: 300, crop: :thumb, gravity: :face %>
+      <% end %>
   </div>
   <% end %>
 </ul>
