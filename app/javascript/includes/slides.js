@@ -22,11 +22,11 @@
     currentSlide = (currentSlide+1)%slides.length;
     slides[currentSlide].className = 'slide showing';
 
-    if (action == "like") {
-      console.log(action);
-    } else {
-      console.log(action);
+    // if (action == "like") {
+    //   console.log(action);
+    // } else {
+    //   console.log(action);
 
-    }
+    // }
 
 }

@@ -52,6 +52,12 @@ gem "bootsnap", require: false
 gem "simple_form", github: "heartcombo/simple_form"
 gem "sassc-rails"
 
+# .ENV for API keys
+gem "dotenv-rails", groups: [:development, :test]
+
+# Cloudinary to host photos
+gem "cloudinary"
+
 # Use Active Storage variants [https://guides.rubyonrails.org/active_storage_overview.html#transforming-images]
 # gem "image_processing", "~> 1.2"
 

@@ -4,6 +4,7 @@
   <% @users.each do |user| %>
   <div class="slide" data-id="<%= user.id %>">
     <li><%= user.first_name %></li>
+    <li><%= user.photos.first %></li>
   </div>
   <% end %>
 </ul>
