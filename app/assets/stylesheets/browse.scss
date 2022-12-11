@@ -10,7 +10,7 @@ these make the slideshow work
   margin: 0px;
   list-style-type: none;
 
-  border-radius: 10px;
+  border-radius: 50px;
 }
 
 .slide {
@@ -53,17 +53,17 @@ just for appearance; change whatever you want
 }
 
 .slide:nth-of-type(1) {
-  background: red;
+  background: yellow;
 }
 .slide:nth-of-type(2) {
-  background: orange;
+  background: rgb(51, 0, 255);
 }
 .slide:nth-of-type(3) {
-  background: green;
+  background: rgb(51, 0, 255);
 }
 .slide:nth-of-type(4) {
-  background: blue;
+  background: rgb(51, 0, 255);
 }
-.slide:nth-of-type(5) {
-  background: purple;
-}
+// .slide:nth-of-type(5) {
+//   background: rgb(51, 0, 255);
+// }
