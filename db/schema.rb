@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema[7.0].define(version: 2022_12_10_142532) do
+ActiveRecord::Schema[7.0].define(version: 2023_02_05_160257) do
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
 
@@ -42,6 +42,18 @@ ActiveRecord::Schema[7.0].define(version: 2022_12_10_142532) do
     t.index ["blob_id", "variation_digest"], name: "index_active_storage_variant_records_uniqueness", unique: true
   end
 
+  create_table "matches", force: :cascade do |t|
+    t.bigint "user1_id", null: false
+    t.bigint "user2_id", null: false
+    t.boolean "user1_accepted", default: true
+    t.boolean "user2_accepted", default: false
+    t.string "status", default: "pending"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["user1_id"], name: "index_matches_on_user1_id"
+    t.index ["user2_id"], name: "index_matches_on_user2_id"
+  end
+
   create_table "users", force: :cascade do |t|
     t.string "email", default: "", null: false
     t.string "encrypted_password", default: "", null: false
@@ -51,10 +63,16 @@ ActiveRecord::Schema[7.0].define(version: 2022_12_10_142532) do
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
     t.string "first_name"
+    t.integer "age"
+    t.string "description"
+    t.integer "orientation"
+    t.string "sexe"
     t.index ["email"], name: "index_users_on_email", unique: true
     t.index ["reset_password_token"], name: "index_users_on_reset_password_token", unique: true
   end
 
   add_foreign_key "active_storage_attachments", "active_storage_blobs", column: "blob_id"
   add_foreign_key "active_storage_variant_records", "active_storage_blobs", column: "blob_id"
+  add_foreign_key "matches", "users", column: "user1_id"
+  add_foreign_key "matches", "users", column: "user2_id"
 end

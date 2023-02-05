@@ -7,4 +7,6 @@ Rails.application.routes.draw do
   get "/browse", to: "browses#browse", as: :browse
   # Defines the root path route ("/")
   # root "articles#index"
+
+  post "/matches/update_or_create", to: "matches#update_or_create", as: :update_or_create
 end

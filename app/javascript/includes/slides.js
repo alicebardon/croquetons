@@ -18,15 +18,19 @@
 
   function goToSlide(action) {
 
+    if (action == "like") {
+      userToMatchId = slides[currentSlide].dataset.id;
+      currentUserId = slides[currentSlide].dataset.currentUserId;
+
+      fetch(`/matches/update_or_create?current_user_id=${currentUserId}&user_to_match_id=${userToMatchId}`,
+        { method: 'POST'})
+    } else {
+      console.log(action);
+
+    }
+
     slides[currentSlide].className = 'slide';
     currentSlide = (currentSlide+1)%slides.length;
     slides[currentSlide].className = 'slide showing';
-
-    // if (action == "like") {
-    //   console.log(action);
-    // } else {
-    //   console.log(action);
-
-    // }
 
 }
