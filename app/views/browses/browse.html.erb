@@ -2,9 +2,10 @@
   <h1>Here, find your new croqueton :) </h1>
     <ul id="slides">
       <% @users.each do |user| %>
-      <div class="slide " data-id="<%= user.id %>">
+      <div class="slide " data-id="<%= user.id %>" data-current-user-id="<%=current_user.id%>">
         <div class="card_info">
-          <li><%= user.first_name %></li>
+          <span class="user_name_age"><%= user.first_name %>, 27</span>
+          <span class="user_main_info"><i class="fa-solid fa-location-dot"></i> Location</span>
             <% user.photos.each do |photo| %>
               <li><%= cl_image_tag photo.key, height: 300, width: 300, crop: :thumb, gravity: :face %></li>
             <% end %>
